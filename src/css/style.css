@@ -19,3 +19,11 @@ img {
   height: 491px;
   width: 691px;
 }
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
