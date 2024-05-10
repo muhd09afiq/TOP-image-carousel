@@ -80,4 +80,9 @@ function handleCarouselClick(direction) {
 window.addEventListener("DOMContentLoaded", () => {
   rightBtn.addEventListener("click", () => handleCarouselClick("right"));
   leftBtn.addEventListener("click", () => handleCarouselClick("left"));
+
+  const carouselAutoSlide = setInterval(
+    () => handleCarouselClick("right"),
+    5000
+  );
 });
