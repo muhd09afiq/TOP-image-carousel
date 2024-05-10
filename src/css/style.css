@@ -6,6 +6,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper {
@@ -26,4 +33,17 @@ img {
 
 .hidden {
   display: none;
+}
+
+.navigation-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* To make it a circle */
+  background-color: #bbb; /* Default color for inactive dots */
+  margin: 0 5px; /* Adjust spacing between dots */
+}
+
+.navigation-dot.active {
+  background-color: #333; /* Color for active dot */
 }
