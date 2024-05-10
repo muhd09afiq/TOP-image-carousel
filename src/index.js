@@ -20,22 +20,34 @@ imgArray.forEach((img) => {
     photo.classList.remove("hidden");
     photo.classList.add("visible");
   }
+  if (img == imgArray[0]) {
+    photo.classList.add("first-img");
+  }
 });
 
 const rightBtn = document.querySelector(".right-btn");
-rightBtn.addEventListener("click", () => {
+rightBtn.addEventListener("click", function () {
   const imgGallery = document.querySelectorAll("img");
   imgGallery.forEach((img) => {
     if (img.classList.contains("visible") == true) {
       img.classList.remove("visible");
       img.classList.add("hidden");
-
-      //show next img
-      const nextImg = imgGallery[img];
-      console.log(typeof nextImg);
-      console.log(nextImg);
-      //   nextImg.classList.add("visible");
-      //   nextImg.classList.remove("hidden");
+      img.classList.add("previous");
     }
   });
+  if (document.querySelector(".previous") != null) {
+    if (document.querySelector(".previous").nextSibling != null) {
+      const nextImg = document.querySelector(".previous").nextSibling;
+      nextImg.classList.add("visible");
+      nextImg.classList.remove("hidden");
+      nextImg.classList.add("previous");
+      document.querySelector(".previous").classList.remove("previous");
+    } else {
+      document.querySelector(".previous").classList.remove("previous");
+      const firstImg = document.querySelector(".first-img");
+      firstImg.classList.add("visible");
+      firstImg.classList.remove("hidden");
+      firstImg.classList.add("previous");
+    }
+  }
 });
